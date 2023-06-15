@@ -88,6 +88,8 @@ class ContextSmartCheck(BaseModel):
 
 @app.post("/smartcheckmfaneeded")
 async def smartcheckmfaneeded(context: ContextSmartCheck):
+    """SmartCheckMfaNeeded : API qui déclenche le MFA (ou pas) à partir du contexte de la connexion
+    """
     #cas ip : s'il y en a plusieurs, on prend la premiere
     firstIp = context.ip.split(',')[0]
 
